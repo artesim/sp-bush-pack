@@ -1,0 +1,2 @@
+ConfigArgParse>=1.2.3
+trio>=0.17.0
