@@ -1,0 +1,225 @@
+
+[Main]
+MissionType=BushTrip
+MissionLocation=Haute Vienne
+Title=TT:Minibush.Mission.01
+Description=MiniBush Test
+AppVersion=10.0.282174
+FlightVersion=1
+
+[Briefing]
+BriefingText=TT:Minibush.Mission.02
+BriefingImage0="./Images/img1.jpg"
+BriefingImage1="./Images/img2.jpg"
+
+[Options]
+Sound=True
+Moonlight=True
+Save=False
+SaveOriginalFlightPlan=False
+TextDisplayPage=0
+SlewDisplayPage=1
+AxisIndicator=Off
+
+[Sim.0]
+Sim=Asobo Savage Cub
+Pilot=Pilot_Male_Casual
+Copilot=
+TailNumber=
+AirlineCallSign=
+FlightNumber=
+AppendHeavy=False
+
+[ResourcePath]
+Path=MiniBush
+
+[ObjectFile]
+File=MiniBush
+
+[Weather]
+UseWeatherFile=True
+
+[Departure]
+ICAO=LFBL
+RunwayNumber=3
+RunwayDesignator=NONE
+
+[Arrival]
+ICAO=LFGD
+RunwayNumber=18
+RunwayDesignator=NONE
+
+[Loading]
+ImageName=./images/Loading_Screen.jpg
+Tips0=TT:LOADING.TIPS.BUSH_TRIPS.1
+Tips1=Sample loading tip
+Tips2=Test de text
+Tips3=TT:LOADING.TIPS.BUSH_TRIPS.3
+Tips4=TT:LOADING.TIPS.BUSH_TRIPS.4
+Tips5=TT:LOADING.TIPS.BUSH_TRIPS.5
+
+[Panels]
+Panel.On=True
+HUD.On=False
+
+[Window.1]
+Order=255
+Active=True
+Undocked=False
+Maximized=True
+ScreenUniCoords=0, 0, 0, 0
+UndocCoords=0, 0, 0, 0
+
+
+[ATC_AgentManager]
+NumberofAgents=0
+
+[ATC_Aircraft.0]
+ActiveFlightPlan=True
+RequestedFlightPlan=False
+AcState=ACSTATE_TAXIING_OUT
+AgentTracking=2,3,18437376,LIMOGES
+ActiveVFRAirport=LFBL
+Waypoint.0=, LFBL, , Bellegarde, A, N45° 51.53', E1° 10.78', +001270.00, , , , , 03, NONE, , 0, -1, 0, 0,  
+Waypoint.1=!A, POI1, , POI1, U, N45° 52.44', E1° 0.76', +002500.00, , , , , , NONE, 0, 0, -1, 0, 0,
+Waypoint.2=, LFBJ, , Saint-Junien, A, N45° 54.13', E0° 55.09', +002500.00, , , , , , NONE, 0, 0, -1, 0, 0,
+Waypoint.3=!B, POI1, , POI2, U, N45° 52.62', E0° 43.35', +001800.00, , , , , , NONE, 0, 0, -1, 0, 0,  
+Waypoint.4=, LFGD, , Base ULM de Saint-Maurice, A, N45° 57.94', E0° 44.38', +000750.00, , , , , , NONE, 0, 0, -1, 0, 0,
+NumberofWaypoints=5
+
+ClearanceFlags=882
+CtCur=CLEARANCE_NONE
+WaypointNext=1
+AltCleared=-1
+HdgAssigned=-1
+SquawkAssigned=1006637568
+LandingSequence=LANDING_NONE
+DepartureRequest=DEPARTURE_VFR_REQUEST_DEPART_WEST
+ParkingRequest=PARKING_NAME_NONE
+ParkingTypeRequest=PARKING_TYPE_NONE
+PatternLeg=PATTERN_LEG_NONE
+ApproachIndex=-1
+ApproachTransitionIndex=-1
+ApproachRequestIndex=-1
+ApproachTransitionRequestIndex=-1
+RunwayIndex=0
+RunwayRequestIndex=-1
+ParkingIndex=-1
+FlightFollowing=FLIGHT_FOLLOWING_NO
+AirspaceTransition=AIRSPACE_TRANSITION_NONE
+BVAirspaceTransition=BV_TYPE_NONE
+BVAirspaceTransitionReq=BV_TYPE_NONE
+TakeoffSequence=TAKEOFF_SEQUENCE_NONE
+LandingSequenceNumber=-1
+TaxiRouteCurrent=26
+CruisingAltitude=2500
+RequestedCruisingAltitude=-1
+ExpectedAltitude=-1
+AircraftSignature=1,0
+
+[ATC_ActiveFlightPlan.0]
+title=LFBL to LFGD
+description=LFBL, LFGD
+type=VFR
+routetype=0
+cruising_altitude=2500
+departure_id=LFBL, N45° 51.16', E1° 10.37', +001270.00
+departure_position=
+destination_id=LFGD, N45° 57.94', E0° 44.38', +000749.00
+departure_name=Bellegarde
+destination_name=Base ULM de Saint-Maurice
+Waypoint.0=, LFBL, , Bellegarde, A, N45° 51.53', E1° 10.78', +001270.00, , , , , 03, NONE, , 0, -1, 0, 0,  
+Waypoint.1=!A, POI1, , POI1, U, N45° 52.44', E1° 0.76', +002500.00, , , , , , NONE, 0, 0, -1, 0, 0,
+Waypoint.2=, LFBJ, , Saint-Junien, A, N45° 54.13', E0° 55.09', +002500.00, , , , , , NONE, 0, 0, -1, 0, 0,
+Waypoint.3=!B, POI1, , POI2, U, N45° 52.62', E0° 43.35', +001800.00, , , , , , NONE, 0, 0, -1, 0, 0,  
+Waypoint.4=, LFGD, , Base ULM de Saint-Maurice, A, N45° 57.94', E0° 44.38', +000750.00, , , , , , NONE, 0, 0, -1, 0, 0,
+
+[ATC_AircraftManager]
+NumberofAircraft=1
+
+
+[ATC_MessageSystem]
+FrequencyNodes=0
+
+[GPS_Engine]
+Filename=minibush
+position=N45° 51.25', E1° 10.36', +001275.00
+Time=-1
+TimeWP=100921
+ArriveTime=1079
+CountWP=5
+NextWP=1
+PlaneStarted=False
+WpInfo0=36, 0, 387, 0, 0, 9.0, 0.0, 0.0
+WpInfo1=86, 0, 762, 0, 0, 0.0, 0.5, 0.0
+WpInfo2=86, 0, 762, 0, 0, 0.0, 0.1, 0.0
+WpInfo3=88, 0, 548, 0, 0, 0.0, 0.3, 0.0
+WpInfo4=70, 0, 228, 0, 0, 0.0, 0.4, 0.0
+CountFP=0
+
+
+[DateTimeSeason]
+Season=Fall
+Year=2020
+Day=284
+Hours=15
+Minutes=1
+Seconds=10
+UseZuluTime=False
+
+
+[SimVars.0]
+Latitude=N45° 51' 15.08"
+Longitude=E1° 10' 21.52"
+Altitude=+001275.00
+Pitch=-12.347532311731718835
+Bank=-0.077474174063142178803
+Heading=141.80071279217008851
+PVelBodyAxis=-5.8753406302891896017e-05
+BVelBodyAxis=0.0001128932222517582077
+HVelBodyAxis=-1.5765218210381271599e-05
+XVelBodyAxis=-0.00046009571558913270025
+YVelBodyAxis=0.0062909619773981514251
+ZVelBodyAxis=-0.00029832279001397275916
+SimOnGround=True
+OnPlatformHeight=-9999999999
+
+
+
+[Slew.0]
+Active=False
+
+[Freeze.0]
+Location=False
+Altitude=False
+Attitude=False
+
+
+
+[Fuel.0]
+TankSelector=All
+TankSelector1=All
+Center=0
+LeftMain=49.999774932861328125
+RightMain=49.999774932861328125
+LeftAux=0
+RightAux=0
+LeftTip=0
+RightTip=0
+Center 2=0
+Center 3=0
+External 1=0
+External 2=0
+
+
+
+[Payload.0]
+PayloadList= 150.0
+
+
+[SimScheduler]
+SimSpeed=001.00
+SimTime=1635.2013103994170251
+
+[Multiplayer]
+Status=0

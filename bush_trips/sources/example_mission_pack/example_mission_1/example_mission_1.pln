@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<SimBase.Document Type="AceXML" version="1,0">
+    <Descr>AceXML Document</Descr>
+    <FlightPlan.FlightPlan>
+        <Title>LFBL to LFGD</Title>
+        <FPType>VFR</FPType>
+        <CruisingAlt>2500.000</CruisingAlt>
+        <DepartureID>LFBL</DepartureID>
+        <DepartureLLA>N45° 51' 9.80",E1° 10' 21.90",+001270.00</DepartureLLA>
+        <DestinationID>LFGD</DestinationID>
+        <DestinationLLA>N45° 57' 56.47",E0° 44' 22.54",+000749.00</DestinationLLA>
+        <Descr>LFBL, LFGD</Descr>
+        <DepartureName>Bellegarde</DepartureName>
+        <DestinationName>Base ULM de Saint-Maurice</DestinationName>
+        <AppVersion>
+            <AppVersionMajor>11</AppVersionMajor>
+            <AppVersionBuild>282174</AppVersionBuild>
+        </AppVersion>
+        <ATCWaypoint id="Bellegarde">
+            <ATCWaypointType>Airport</ATCWaypointType>
+            <WorldPosition>N45° 51' 31.79",E1° 10' 46.76",+001270.00</WorldPosition>
+            <RunwayNumberFP>3</RunwayNumberFP>
+            <ICAO>
+                <ICAOIdent>LFBL</ICAOIdent>
+            </ICAO>
+        </ATCWaypoint>
+        <ATCWaypoint id="POI">
+            <ATCWaypointType>User</ATCWaypointType>
+            <WorldPosition>N45° 52' 26.69",E1° 0' 45.62",+002500.00</WorldPosition>           
+        </ATCWaypoint>
+        <ATCWaypoint id="Saint-Junien">
+            <ATCWaypointType>Airport</ATCWaypointType>
+            <WorldPosition>N45° 54' 8.07",E0° 55' 5.33",+002500.00</WorldPosition>
+            <SpeedMaxFP>-1</SpeedMaxFP>
+            <ICAO>
+                <ICAOIdent>LFBJ</ICAOIdent>
+            </ICAO>
+        </ATCWaypoint>       
+        <ATCWaypoint id="POI">
+            <ATCWaypointType>User</ATCWaypointType>
+            <WorldPosition>N45° 52' 37.11",E0° 43' 21.27",+001800.00</WorldPosition>            
+        </ATCWaypoint>
+        <ATCWaypoint id="Base ULM de Saint-Maurice">
+            <ATCWaypointType>Airport</ATCWaypointType>
+            <WorldPosition>N45° 57' 56.48",E0° 44' 22.54",+000750.00</WorldPosition>           
+            <ICAO>
+                <ICAOIdent>LFGD</ICAOIdent>
+            </ICAO>
+        </ATCWaypoint>
+    </FlightPlan.FlightPlan>
+</SimBase.Document>
