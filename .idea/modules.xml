@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/sp-bush-trips.iml" filepath="$PROJECT_DIR$/.idea/sp-bush-trips.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/sp-bush-pack.iml" filepath="$PROJECT_DIR$/.idea/sp-bush-pack.iml" />
     </modules>
   </component>
 </project>

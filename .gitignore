@@ -1,5 +1,4 @@
 /_backup
 /docs
-/in
-/out
-/tmp
+/dist
+/ref

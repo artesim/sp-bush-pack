@@ -1,5 +1,0 @@
-waypoint: LFBJ
-image: images/1.png
-
-subleg 1x02 - description
-

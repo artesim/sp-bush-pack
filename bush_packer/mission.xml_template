@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<SimBase.Document Type="MissionFile" version="1,0" id="{mission_id}">
+    <Title>{title}</Title>
+    <Filename>{mission_id}.xml</Filename>
+    <WorldBase.Flight InstanceId="{flight_uuid}">
+        <SimMission.MissionBushTrip InstanceId="{mission_uuid}" id="{mission_id}">
+            <Descr>{description}</Descr>
+            <Legs>
+                {legs}
+            </Legs>
+            <Objectives>
+                <Objective UniqueRefId="{goal_uuid}">
+                    <Descr>End mission</Descr>
+                    <FailureText>TT:MISSIONMESSAGE.FLIGHT.OUTOFFUEL</FailureText>
+                </Objective>
+            </Objectives>
+            <OnFinishedActions>
+                <WorldBase.ObjectReference id="End Of Mission" InstanceId="{goal_resolution_success_uuid}"/>
+            </OnFinishedActions>
+        </SimMission.MissionBushTrip>
+        {leg_completion_triggers}
+        <SimMission.Goal InstanceId="{goal_uuid}">
+            <Descr>End of mission</Descr>
+            <Activated>false</Activated>
+        </SimMission.Goal>
+        <SimMission.GoalResolutionAction InstanceId="{goal_resolution_success_uuid}">
+            <Descr>Resolve Goal End of mission</Descr>
+            <Goals>
+                <WorldBase.ObjectReference id="Mission END" InstanceId="{goal_uuid}"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.GoalResolutionAction InstanceId="{goal_resolution_failure_uuid}">
+            <Descr>Failure</Descr>
+            <GoalResolution>failed</GoalResolution>
+            <Goals>
+                <WorldBase.ObjectReference id="Mission END" InstanceId="{goal_uuid}"/>
+            </Goals>
+        </SimMission.GoalResolutionAction>
+        <SimMission.TimerTriggerFlowStateAction InstanceId="{timer_start_uuid}">
+            <Descr>TimerStart</Descr>
+            <DefaultActivated>true</DefaultActivated>
+            <OnScreenTimer>true</OnScreenTimer>
+            <UseFirstFlightState>true</UseFirstFlightState>
+            <Actions>
+                <WorldBase.ObjectReference id="WiseAFSSet" InstanceId="{wise_afs_set_uuid}"/>
+            </Actions>
+        </SimMission.TimerTriggerFlowStateAction>
+        <SimMission.FlowStateAction InstanceId="{flow_state_intro_uuid}">
+            <FlowStateName>INTRO</FlowStateName>
+            <StayInStateAfterEndTeleportActions>false</StayInStateAfterEndTeleportActions>
+            <IsFirstStateInTimeline>true</IsFirstStateInTimeline>
+            <FromSpawn>true</FromSpawn>
+            <TeleportFlowEvents>
+                <FlowEvent id="SHOW_MISSION_STARTUP"/>
+                <FlowEvent id="PAUSE_SIM"/>
+            </TeleportFlowEvents>
+            <StartFlowEvents>
+                <FlowEvent id="UNACTIVATE_PUSHBACK"/>
+                <FlowEvent id="UNPAUSE_SIM"/>
+                <FlowEvent id="PANEL_COPILOT_FORCE_DISABLED"/>
+                <FlowEvent id="PANEL_CHECKLIST_FORCE_DISABLED"/>
+                <FlowEvent id="PANEL_FUEL_PAYLOAD_FORCE_DISABLED"/>
+                <FlowEvent id="PANEL_TELEPORT_FORCE_DISABLED"/>
+                <FlowEvent id="PANEL_OBJECTIVES_FORCE_DISABLED"/>
+                <FlowEvent id="PANEL_ATC_FORCE_DISABLED"/>
+                <FlowEvent id="PANEL_CONTROLS_FORCE_DISABLED"/>
+            </StartFlowEvents>
+            <TeleportActions>
+                <WorldBase.ObjectReference id="WWiseRTCState_RTC_CONDITIONAL" InstanceId="{teleport_wise_rtc_uuid}"/>
+                <WorldBase.ObjectReference id="RTC_Ground_Airport_Aircraft_Intro"
+                                           InstanceId="{teleport_ground_arpt_ac_intro_uuid}"/>
+            </TeleportActions>
+            <EndActions>
+                <WorldBase.ObjectReference id="WWiseRTCState_NON_RTC" InstanceId="{teleport_wise_rtc_non_rtc_uuid}"/>
+            </EndActions>
+            <NextState id="BUSHTRIP" InstanceId="{flow_state_bush_trip_uuid}"/>
+        </SimMission.FlowStateAction>
+        <SimMission.FlowStateAction InstanceId="{flow_state_bush_trip_uuid}">
+            <FlowStateName>BUSHTRIP</FlowStateName>
+            <AutoStateSwitchEnabled>false</AutoStateSwitchEnabled>
+            <StartFlowEvents>
+                <FlowEvent id="PANEL_GAME_NAVLOG_SHOW"/>
+                <FlowEvent id="PANEL_VFR_MAP_SHOW"/>
+            </StartFlowEvents>
+            <NextState id="LANDING_REST" InstanceId="{flow_state_landing_rest_uuid}"/>
+        </SimMission.FlowStateAction>
+        <SimMission.FlowStateAction InstanceId="{flow_state_landing_rest_uuid}">
+            <FlowStateName>LANDING_REST</FlowStateName>
+            <AutoStateSwitchEnabled>false</AutoStateSwitchEnabled>
+            <StartActions>
+                <WorldBase.ObjectReference id="RTC_Ground_Aircraft_Outro" InstanceId="{rtc_ground_ac_outro_uuid}"/>
+            </StartActions>
+            <NextState id="BUSHTRIP" InstanceId="{flow_state_bush_trip_uuid}"/>
+        </SimMission.FlowStateAction>
+        <SimMission.Calculator id="CLTR_OutOfFuel" InstanceId="{calc_out_of_fuel_uuid}">
+            <Descr>TT:MISSIONMESSAGE.FLIGHT.OUTOFFUEL</Descr>
+            <Activated>true</Activated>
+            <CalculatorFormula>
+                [FuelQuantity]
+            </CalculatorFormula>
+            <CalculatorParameterList>
+                <FormulaParameter NameInFormula="FuelQuantity">
+                    <CalculatorFormula>
+                        (A:FUEL TOTAL QUANTITY, gallons)
+                        (A:UNUSABLE FUEL TOTAL QUANTITY, gallons)
+                        -
+                    </CalculatorFormula>
+                </FormulaParameter>
+                <FormulaParameter NameInFormula="InAir">
+                    <CalculatorFormula>
+                        (A:PLANE ALT ABOVE GROUND, meter) (A:STATIC CG TO GROUND, meter) + 10 &gt;
+                    </CalculatorFormula>
+                </FormulaParameter>
+                <FormulaParameter NameInFormula="OnGround">
+                    <CalculatorFormula>
+                        (A:SIM ON GROUND, Boolean) 0 &gt;
+                    </CalculatorFormula>
+                </FormulaParameter>
+                <FormulaParameter NameInFormula="FlyingOutOfFuel">
+                    <CalculatorFormula>
+                        [FuelQuantity] 0.001 &lt;
+                        [OnGround] not
+                        and
+                        [FlyingOutOfFuel]
+                        or
+                    </CalculatorFormula>
+                </FormulaParameter>
+                <FormulaParameter NameInFormula="TimerOutOfFuel">
+                    <CalculatorFormula>
+                        [FlyingOutOfFuel]
+                        [OnGround]
+                        and
+                        if{{
+                        [TimerOutOfFuel]
+                        [dtime]
+                        +
+                        }}
+                        els{{
+                        0
+                        }}
+                    </CalculatorFormula>
+                </FormulaParameter>
+            </CalculatorParameterList>
+            <CalculatorActions>
+                <CalculatorAction>
+                    <CalculatorFormula>
+                        [TimerOutOfFuel] 15 &gt;
+                        [FlyingOutOfFuel]
+                        [OnGround]
+                        (A:GROUND VELOCITY, Knots) 5 &lt;
+                        and
+                        and
+                        or
+                    </CalculatorFormula>
+                    <Actions>
+                        <WorldBase.ObjectReference id="ACT_FailGoal" InstanceId="{goal_resolution_failure_uuid}"/>
+                    </Actions>
+                </CalculatorAction>
+                <CalculatorAction>
+                    <CalculatorFormula>
+                        [InAir]
+                    </CalculatorFormula>
+                    <Actions>
+                        <WorldBase.ObjectReference id="FlowEvent_DisableFuel"
+                                                   InstanceId="{flow_event_disable_fuel_uuid}"/>
+                    </Actions>
+                </CalculatorAction>
+            </CalculatorActions>
+        </SimMission.Calculator>
+        <SimMission.FlowEventAction InstanceId="{flow_event_landing_rest_uuid}">
+            <Descr>FlowEvent_Landing_Rest</Descr>
+            <FlowEvents>
+                <FlowEvent id="BUSHTRIP_LEG_COMPLETED"/>
+            </FlowEvents>
+        </SimMission.FlowEventAction>
+        <SimMission.FlowEventAction InstanceId="{flow_event_disable_fuel_uuid}">
+            <Descr>FlowEvent_DisableFuel</Descr>
+            <FlowEvents>
+                <FlowEvent id="PANEL_FUEL_PAYLOAD_FORCE_DISABLED"/>
+            </FlowEvents>
+        </SimMission.FlowEventAction>
+        <SimMission.EventTriggerAction id="ACT_NotifOutOfRunway" InstanceId="{event_trigger_out_of_rwy_uuid}">
+            <Descr>Landed outside of runway</Descr>
+            <Name>EVENT_TRIGGER_NOT_ON_RUNWAY</Name>
+        </SimMission.EventTriggerAction>
+        <SimMission.FlowStateWise InstanceId="{wise_afs_set_uuid}">
+            <Descr>WiseAFSSet</Descr>
+            <GroupName>ACTIVITIES_FLOW_STATE</GroupName>
+            <ElementName>BUSHTRIP</ElementName>
+        </SimMission.FlowStateWise>
+        <SimMission.FlowStateWise InstanceId="{teleport_wise_rtc_non_rtc_uuid}">
+            <Descr>WWiseRTCState_NON_RTC</Descr>
+            <GroupName>GAME_RTC_STATE</GroupName>
+            <ElementName>NON_RTC</ElementName>
+        </SimMission.FlowStateWise>
+        <SimMission.FlowStateWise InstanceId="{teleport_wise_rtc_uuid}">
+            <Descr>WWiseRTCState_RTC</Descr>
+            <GroupName>GAME_RTC_STATE</GroupName>
+            <ConditionalElementName>
+                <ReversePolishCondition>(A:PLANE ALT ABOVE GROUND, meter) (A:STATIC CG TO GROUND, meter) - 0 &lt;
+                </ReversePolishCondition>
+                <ElementName>RTC</ElementName>
+            </ConditionalElementName>
+            <ConditionalElementName>
+                <ReversePolishCondition>(A:PLANE ALT ABOVE GROUND, meter) (A:STATIC CG TO GROUND, meter) - 0 &gt;
+                </ReversePolishCondition>
+                <ElementName>RTC_IN_FLIGHT</ElementName>
+            </ConditionalElementName>
+        </SimMission.FlowStateWise>
+    </WorldBase.Flight>
+</SimBase.Document>

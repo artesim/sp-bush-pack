@@ -1,3 +1,0 @@
-user_waypoint: POI1
-
-subleg 1x01 - description

@@ -1,0 +1,12 @@
+{
+  "version": "0.1",
+  "title": {
+    "en-US": "Example Mission 1 Title",
+    "fr-FR": "Titre de Mission Exemple 1"
+  },
+  "description": {
+    "en-US": "Example Mission 1 Description",
+    "fr-FR": "Description de Mission Exemple 1"
+  },
+  "initial_fix": "LFBL"
+}
