@@ -8,5 +8,9 @@
     "en-US": "Example Mission 1 Description",
     "fr-FR": "Description de Mission Exemple 1"
   },
+  "location": {
+    "en-US": "Upper Vienne",
+    "fr-FR": "Haute Vienne"
+  },
   "initial_fix": "LFBL"
 }

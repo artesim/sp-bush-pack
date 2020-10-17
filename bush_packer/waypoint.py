@@ -36,7 +36,7 @@ class Waypoint:
 
     @property
     def _image_block(self) -> str:
-        return f'<ImagePath>{self._image_output_rel_path}</ImagePath>' if self._image_output_rel_path else ''
+        return f'<ImagePath>{self._image_output_rel_path.as_posix()}</ImagePath>' if self._image_output_rel_path else ''
 
     @classmethod
     def load(cls, src_dir: Path, *, mission_id: str, leg_index: int) -> Union[UserWaypoint, Waypoint]:
@@ -89,7 +89,7 @@ class Waypoint:
 
         return sorted(artifacts)
 
-    def dump(self, prev_waypoint: Waypoint) -> str:
+    def dump_xml(self, prev_waypoint: Waypoint) -> str:
         return f"""<SubLeg>
                        <Descr>{self.description or ''}</Descr>
                        {self._image_block}

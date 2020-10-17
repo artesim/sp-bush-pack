@@ -1,16 +1,14 @@
-
 [Main]
 MissionType=BushTrip
-MissionLocation=Haute Vienne
-Title=TT:Minibush.Mission.01
-Description=MiniBush Test
+MissionLocation={location}
+Title={title}
+Description={description}
 AppVersion=10.0.282174
 FlightVersion=1
 
 [Briefing]
-BriefingText=TT:Minibush.Mission.02
-BriefingImage0="./images/Briefing_1.jpg"
-BriefingImage1="./images/Briefing_2.jpg"
+BriefingText={main_briefing}
+{leg_briefing_images}
 
 [Options]
 Sound=True
@@ -31,10 +29,10 @@ FlightNumber=
 AppendHeavy=False
 
 [ResourcePath]
-Path=MiniBush
+Path={mission_id}
 
 [ObjectFile]
-File=MiniBush
+File={mission_id}
 
 [Weather]
 UseWeatherFile=True
@@ -142,7 +140,7 @@ NumberofAircraft=1
 FrequencyNodes=0
 
 [GPS_Engine]
-Filename=minibush
+Filename={mission_id}
 position=N45� 51.25', E1� 10.36', +001275.00
 Time=-1
 TimeWP=100921

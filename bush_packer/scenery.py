@@ -23,5 +23,5 @@ class Scenery:
     def build(self, out_dir: Path) -> List[Path]:
         return list()
 
-    def dump(self) -> str:
+    def dump_xml(self) -> str:
         return ''

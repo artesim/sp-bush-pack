@@ -197,13 +197,11 @@
             <Descr>WWiseRTCState_RTC</Descr>
             <GroupName>GAME_RTC_STATE</GroupName>
             <ConditionalElementName>
-                <ReversePolishCondition>(A:PLANE ALT ABOVE GROUND, meter) (A:STATIC CG TO GROUND, meter) - 0 &lt;
-                </ReversePolishCondition>
+                <ReversePolishCondition>(A:PLANE ALT ABOVE GROUND, meter) (A:STATIC CG TO GROUND, meter) - 0 &lt; </ReversePolishCondition>
                 <ElementName>RTC</ElementName>
             </ConditionalElementName>
             <ConditionalElementName>
-                <ReversePolishCondition>(A:PLANE ALT ABOVE GROUND, meter) (A:STATIC CG TO GROUND, meter) - 0 &gt;
-                </ReversePolishCondition>
+                <ReversePolishCondition>(A:PLANE ALT ABOVE GROUND, meter) (A:STATIC CG TO GROUND, meter) - 0 &gt; </ReversePolishCondition>
                 <ElementName>RTC_IN_FLIGHT</ElementName>
             </ConditionalElementName>
         </SimMission.FlowStateWise>

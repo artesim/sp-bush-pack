@@ -21,8 +21,7 @@
         </FormulaParameter>
         <FormulaParameter NameInFormula="TimerLanded">
             <CalculatorFormula>
-                [OnRunway] [SignedDistanceToAirportArea] [Threshold] &lt; or [OnGround] and (A:GROUND VELOCITY, Knots) 2
-                &lt; and
+                [OnRunway] [SignedDistanceToAirportArea] [Threshold] &lt; or [OnGround] and (A:GROUND VELOCITY, Knots) 2 &lt; and
                 if{{
                 [TimerLanded] [dtime] +
                 }}
@@ -36,8 +35,7 @@
         </FormulaParameter>
         <FormulaParameter NameInFormula="OutsideTouchDown">
             <CalculatorFormula>
-                [SignedDistanceToClosestRunway] [FarThreshold] &lt; [SignedDistanceToClosestRunway] [Threshold] &gt;
-                [OnGround] and and [OutsideTouchDown] or
+                [SignedDistanceToClosestRunway] [FarThreshold] &lt; [SignedDistanceToClosestRunway] [Threshold] &gt; [OnGround] and and [OutsideTouchDown] or
             </CalculatorFormula>
         </FormulaParameter>
     </CalculatorParameterList>
@@ -47,8 +45,7 @@
                 [OutsideTouchDown] [UnknownTouchDown] not and
             </CalculatorFormula>
             <Actions>
-                <WorldBase.ObjectReference id="ACT_NotifOutOfRunway"
-                                           InstanceId="{event_trigger_out_of_rwy_uuid}"/>
+                <WorldBase.ObjectReference id="ACT_NotifOutOfRunway" InstanceId="{event_trigger_out_of_rwy_uuid}"/>
             </Actions>
         </CalculatorAction>
         <CalculatorAction>
@@ -57,8 +54,7 @@
                 [TimerLanded] 2 &gt;
             </CalculatorFormula>
             <Actions>
-                <WorldBase.ObjectReference id="FlowEvent_LandingRest"
-                                           InstanceId="{flow_event_landing_rest_uuid}"/>
+                <WorldBase.ObjectReference id="FlowEvent_LandingRest" InstanceId="{flow_event_landing_rest_uuid}"/>
             </Actions>
         </CalculatorAction>
     </CalculatorActions>

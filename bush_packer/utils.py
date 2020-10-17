@@ -29,7 +29,7 @@ class LocStr:
     def __new__(cls, *, str_id: str, alternatives: Dict[Lang, str]):
         if str_id not in cls.__instances__:
             instance = super().__new__(cls)
-            instance.str_id = f"TT:COMMUNITY_PKG.{str_id}"
+            instance.str_id = str_id
             instance.alternatives = alternatives
             cls.__instances__[str_id] = instance
         return cls.__instances__[str_id]
