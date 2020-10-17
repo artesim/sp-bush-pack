@@ -1,3 +1,4 @@
+
 [Main]
 MissionType=BushTrip
 MissionLocation={location}
@@ -78,11 +79,11 @@ RequestedFlightPlan=False
 AcState=ACSTATE_TAXIING_OUT
 AgentTracking=2,3,18437376,LIMOGES
 ActiveVFRAirport=LFBL
-Waypoint.0=, LFBL, , Bellegarde, A, N45ï¿½ 51.53', E1ï¿½ 10.78', +001270.00, , , , , 03, NONE, , 0, -1, 0, 0,
-Waypoint.1=!A, POI1, , POI1, U, N45ï¿½ 52.44', E1ï¿½ 0.76', +002500.00, , , , , , NONE, 0, 0, -1, 0, 0,
-Waypoint.2=, LFBJ, , Saint-Junien, A, N45ï¿½ 54.13', E0ï¿½ 55.09', +002500.00, , , , , , NONE, 0, 0, -1, 0, 0,
-Waypoint.3=!B, POI1, , POI2, U, N45ï¿½ 52.62', E0ï¿½ 43.35', +001800.00, , , , , , NONE, 0, 0, -1, 0, 0,
-Waypoint.4=, LFGD, , Base ULM de Saint-Maurice, A, N45ï¿½ 57.94', E0ï¿½ 44.38', +000750.00, , , , , , NONE, 0, 0, -1, 0, 0,
+Waypoint.0=, LFBL, , Bellegarde, A, N45° 51.53', E1° 10.78', +001270.00, , , , , 03, NONE, , 0, -1, 0, 0,  
+Waypoint.1=!A, POI1, , POI1, U, N45° 52.44', E1° 0.76', +002500.00, , , , , , NONE, 0, 0, -1, 0, 0,
+Waypoint.2=, LFBJ, , Saint-Junien, A, N45° 54.13', E0° 55.09', +002500.00, , , , , , NONE, 0, 0, -1, 0, 0,
+Waypoint.3=!B, POI1, , POI2, U, N45° 52.62', E0° 43.35', +001800.00, , , , , , NONE, 0, 0, -1, 0, 0,  
+Waypoint.4=, LFGD, , Base ULM de Saint-Maurice, A, N45° 57.94', E0° 44.38', +000750.00, , , , , , NONE, 0, 0, -1, 0, 0,
 NumberofWaypoints=5
 
 ClearanceFlags=882
@@ -121,16 +122,16 @@ description=LFBL, LFGD
 type=VFR
 routetype=0
 cruising_altitude=2500
-departure_id=LFBL, N45ï¿½ 51.16', E1ï¿½ 10.37', +001270.00
+departure_id=LFBL, N45° 51.16', E1° 10.37', +001270.00
 departure_position=
-destination_id=LFGD, N45ï¿½ 57.94', E0ï¿½ 44.38', +000749.00
+destination_id=LFGD, N45° 57.94', E0° 44.38', +000749.00
 departure_name=Bellegarde
 destination_name=Base ULM de Saint-Maurice
-Waypoint.0=, LFBL, , Bellegarde, A, N45ï¿½ 51.53', E1ï¿½ 10.78', +001270.00, , , , , 03, NONE, , 0, -1, 0, 0,
-Waypoint.1=!A, POI1, , POI1, U, N45ï¿½ 52.44', E1ï¿½ 0.76', +002500.00, , , , , , NONE, 0, 0, -1, 0, 0,
-Waypoint.2=, LFBJ, , Saint-Junien, A, N45ï¿½ 54.13', E0ï¿½ 55.09', +002500.00, , , , , , NONE, 0, 0, -1, 0, 0,
-Waypoint.3=!B, POI1, , POI2, U, N45ï¿½ 52.62', E0ï¿½ 43.35', +001800.00, , , , , , NONE, 0, 0, -1, 0, 0,
-Waypoint.4=, LFGD, , Base ULM de Saint-Maurice, A, N45ï¿½ 57.94', E0ï¿½ 44.38', +000750.00, , , , , , NONE, 0, 0, -1, 0, 0,
+Waypoint.0=, LFBL, , Bellegarde, A, N45° 51.53', E1° 10.78', +001270.00, , , , , 03, NONE, , 0, -1, 0, 0,  
+Waypoint.1=!A, POI1, , POI1, U, N45° 52.44', E1° 0.76', +002500.00, , , , , , NONE, 0, 0, -1, 0, 0,
+Waypoint.2=, LFBJ, , Saint-Junien, A, N45° 54.13', E0° 55.09', +002500.00, , , , , , NONE, 0, 0, -1, 0, 0,
+Waypoint.3=!B, POI1, , POI2, U, N45° 52.62', E0° 43.35', +001800.00, , , , , , NONE, 0, 0, -1, 0, 0,  
+Waypoint.4=, LFGD, , Base ULM de Saint-Maurice, A, N45° 57.94', E0° 44.38', +000750.00, , , , , , NONE, 0, 0, -1, 0, 0,
 
 [ATC_AircraftManager]
 NumberofAircraft=1
@@ -141,7 +142,7 @@ FrequencyNodes=0
 
 [GPS_Engine]
 Filename={mission_id}
-position=N45ï¿½ 51.25', E1ï¿½ 10.36', +001275.00
+position=N45° 51.25', E1° 10.36', +001275.00
 Time=-1
 TimeWP=100921
 ArriveTime=1079
@@ -167,8 +168,8 @@ UseZuluTime=False
 
 
 [SimVars.0]
-Latitude=N45ï¿½ 51' 15.08"
-Longitude=E1ï¿½ 10' 21.52"
+Latitude=N45° 51' 15.08"
+Longitude=E1° 10' 21.52"
 Altitude=+001275.00
 Pitch=-12.347532311731718835
 Bank=-0.077474174063142178803

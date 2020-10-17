@@ -85,7 +85,7 @@ class Mission:
         shutil.copytree(self.src_dir / 'images', root / 'images', dirs_exist_ok=True)
 
         # Generate the mission FLT file
-        mission_flt.write_text(self.dump_flt())
+        mission_flt.write_text(self.dump_flt(), encoding='ANSI')
 
         # Generate the MissionFile xml
         mission_xml.write_text(self.dump_xml())
@@ -148,7 +148,7 @@ class Mission:
         ) for leg in self.legs])
 
     def dump_flt(self) -> str:
-        return (self.src_dir / 'mission.flt_template').read_text().format(
+        return (self.src_dir / 'mission.flt_template').read_text(encoding='ANSI').format(
             location=self.location,
             title=self.title,
             description=self.description,
