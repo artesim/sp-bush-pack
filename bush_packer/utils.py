@@ -35,7 +35,7 @@ class LocStr:
         return cls.__instances__[str_id]
 
     def __str__(self):
-        return self.str_id
+        return f'TT:{self.str_id}'
 
     def __getitem__(self, item: Lang):
         return self.alternatives.get(item)
